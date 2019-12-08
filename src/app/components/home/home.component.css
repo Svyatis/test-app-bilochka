@@ -1,0 +1,23 @@
+.dashboard-section-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard-section-image img {
+    width: 100%;
+}
+
+.dashboard-section-text {
+    font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #4B5E0D;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.dashboard-section-text a {
+    color: blue;
+}

@@ -1,0 +1,10 @@
+.products-nav {
+    margin-bottom: 20px;
+}
+
+.nav-justified .nav-item {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}

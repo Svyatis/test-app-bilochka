@@ -1,0 +1,34 @@
+.products-nav {
+    margin-bottom: 50px;
+}
+
+.nav-justified .nav-item {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: #fff;
+    border-bottom: 2px solid #4B5E0D;
+}
+
+.nav-item.nav-link {
+    font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    color: #4B5E0D;
+    font-size: 13px;
+    font-weight: 600;
+    border-bottom: 2px solid #fff;
+}
+
+.disable-selection {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Opera and Firefox */
+}

@@ -1,0 +1,23 @@
+.about-us-text {
+    color: #0f0f0f;
+    font-size: 18px !important;
+    background-color: #efefef;
+    font: italic normal normal 1rem/1.2 "Times New Roman", sans serif;
+    font-size: 20px !important;
+    border: none 0 transparent;
+    text-align: left;
+    padding: 28px;
+    padding: 2rem;
+}
+
+.about-us-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}
+
+.about-us-image img {
+    max-width: 100%;
+    width: 500px;
+}

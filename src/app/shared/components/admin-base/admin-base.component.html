@@ -1,0 +1,98 @@
+<div class="row">
+    <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 col-xl-6 panel panel-primary padding-top-50">
+        <div class="panel-body">
+            <form [formGroup]="productsForm" novalidate>
+                <div class="form-group">
+                    <label class="col-md-4">Назва</label>
+                    <input type="text" class="form-control" formControlName="label" #label />
+                </div>
+                <div *ngIf="productsForm.controls['label'].invalid && (productsForm.controls['label'].dirty || productsForm.controls['label'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="productsForm.controls['label'].errors.required">
+                        Назва обов'язкова.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4">Ціна</label>
+                    <input type="text" class="form-control" formControlName="cost" #cost />
+                </div>
+                <div *ngIf="productsForm.controls['cost'].invalid && (productsForm.controls['cost'].dirty || productsForm.controls['cost'].touched)"
+                    class="alert alert-danger">
+                    <div *ngIf="productsForm.controls['cost'].errors.required">
+                        Ціна обов'язкова.
+                    </div>
+                </div>
+
+                <div *ngIf="currentUpload">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-animated"
+                            [ngStyle]="{ 'width': currentUpload?.progress + '%' }"></div>
+                    </div>
+                    Progress: {{currentUpload?.name}} | {{currentUpload?.progress}}% Complete
+                </div>
+
+                <div class="form-group">
+                    <label class="file-input-label">
+                        <input type="file" (change)="detectFiles($event)">
+                    </label>
+                </div>
+
+                <div class="form-group admin-add-button">
+                    <button (click)="addProducts(label.value, cost.value)" [disabled]="productsForm.pristine || productsForm.invalid || !selectedFiles"
+                        class="btn btn-primary">Додати</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div>
+    <form class="example-table-container mat-elevation-z8" [formGroup]="form">
+        <mat-table #table [dataSource]="dataSource" formArrayName="products">
+    
+            <!-- Position Column -->
+            <ng-container matColumnDef="identifier">
+                <mat-header-cell *matHeaderCellDef> Ідентифікатор </mat-header-cell>
+                <mat-cell *matCellDef="let row; let index = index"  [formGroupName]="index"> {{row.value.identifier}} </mat-cell>
+            </ng-container>
+    
+            <!-- Name Column -->
+            <ng-container matColumnDef="label">
+                <mat-header-cell *matHeaderCellDef> Назва </mat-header-cell>
+                <mat-cell *matCellDef="let row; let index = index"  [formGroupName]="index">
+                    <mat-form-field>
+                        <input matInput [value]="row.value.label" formControlName="label">
+                    </mat-form-field>
+                </mat-cell>
+            </ng-container>
+    
+            <!-- Weight Column -->
+            <ng-container matColumnDef="cost">
+                <mat-header-cell *matHeaderCellDef> Ціна </mat-header-cell>
+                <mat-cell *matCellDef="let row; let index = index"  [formGroupName]="index">
+                    <mat-form-field>
+                        <input matInput [value]="row.value.cost" formControlName="cost">
+                    </mat-form-field>
+                </mat-cell>
+            </ng-container>
+    
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="symbol">
+                <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+                <mat-cell *matCellDef="let row; let index = index"  [formGroupName]="index">
+                    <div *ngIf="row.disabled">
+                        <button mat-button color="primary" (click)="editProduct(row)">Edit</button>
+                    </div>
+                    <div *ngIf="row.enabled">
+                        <button mat-button color="primary" (click)="updateProduct(row)">Update</button>
+                        <button mat-button color="warn" (click)="deleteProduct(row)">Delete</button>
+                        <button mat-button (click)="cancelEditProduct(row)">Cancel</button>
+                    </div>
+                </mat-cell>
+            </ng-container>
+    
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; let i = index; let even = even; columns: displayedColumns;" [ngClass]="{gray: even}"></mat-row>
+        </mat-table>
+    </form>
+</div>

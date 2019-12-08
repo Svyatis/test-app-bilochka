@@ -1,0 +1,46 @@
+<div class="container">
+    <cart-view [display]="'responsive-table'" [images]="true" [customEmptyContent]="'true'"
+    [nameHeaderText]="'Назва'" [quantityHeaderText]="'Кількість'"
+    [priceHeaderText]="'Ціна'" [totalHeaderText]="'Сума'" [taxFooterText]="''"
+    [shippingFooterText]="''" [totalFooterText]="'Загалом'">
+        <h1 class="cart-view-empty">Кошик порожній</h1>
+    </cart-view>
+
+    <form [formGroup]="purchaseForm" (ngSubmit)="onPurchase()" *ngIf="!cartService.isEmpty()"
+            class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 col-xl-6">
+        <div class="form-group">
+            <label for="username">Ім'я</label>
+            <input type="text" formControlName="username" class="form-control" name="username"
+                    [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                <div *ngIf="f.username.errors.required">Ім'я обов'язкове</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Адреса електронної пошти</label>
+            <input type="email" formControlName="email" class="form-control" name="email"
+                    [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.email">Адреса електронної пошти не валідна</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="phone">Номер телефону</label>
+            <input type="text" formControlName="phone" class="form-control" name="phone"
+                    [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+            <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                <div *ngIf="f.phone.errors.required">Номер телефону обов'язковий</div>
+                <div *ngIf="f.phone.errors.pattern">Номер телефону не валідний</div>
+            </div>
+        </div>
+        <div class="form-group purchase-button">
+            <button [disabled]="loading" class="btn btn-primary">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                Замовити
+            </button>
+        </div>
+        <div class="form-group">
+            <p class="text-center">*Після замовлення ми зв'яжемось з Вами за вказаним Вами номером телефону для підтвердження та уточнення замовлення.</p>
+        </div>
+    </form>
+</div>

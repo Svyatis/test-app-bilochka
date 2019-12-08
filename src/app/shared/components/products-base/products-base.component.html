@@ -1,0 +1,50 @@
+<div class="container" *ngIf="products && products.length > 0">
+    <div class="text-center">
+        <form [formGroup]="form" (ngSubmit)="search(form)" class="products-search-form">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Пошук" formControlName="searchValue">
+                <button type="button" mat-button *ngIf="f.searchValue.value" matSuffix mat-icon-button aria-label="Clear" 
+                        (click)="f.searchValue.setValue(''); search(form)">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+            </mat-form-field>
+            <button type="submit" mat-button class="products-search-form-button">Шукати</button>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6 col-lg-3" *ngFor="let product of products | paginate: config">
+        <div class="hover-item disable-selection">
+            <div *ngIf="loading" class="image-loading-wheel"><app-loading-wheel></app-loading-wheel></div>
+            <img [hidden]="loading" (load)="onLoad()" [src]="product.photo" class="img-responsive transition-smooth" alt="{{product.label}}"/>
+
+            <div class="hover-item-caption transition-smooth">
+                <div class="width-100 vertical-center transition-smooth disable-selection">
+                    <div><span class="product-label">{{ product.label }}</span></div>
+                    <div><span class="product-label-price">{{ getItem(product.identifier).cost }} грн/{{getItem(product.identifier).weight}}г</span></div>
+                    <div class="product-weight-row">
+                        <div class="product-weight-item" [ngClass]="{active:product.identifier.slice(-2) == '01'}" 
+                                (click)="setItemId(product, '01')">100 г</div>
+                        <div class="product-weight-item" [ngClass]="{active:product.identifier.slice(-2) == '02'}" 
+                                (click)="setItemId(product, '02')">200 г</div>
+                    </div>
+                    <div class="product-weight-row-bottom">
+                        <div class="product-weight-item" [ngClass]="{active:product.identifier.slice(-2) == '05'}" 
+                                (click)="setItemId(product, '05')">500 г</div>
+                        <div class="product-weight-item" [ngClass]="{active:product.identifier.slice(-2) == '10'}" 
+                                (click)="setItemId(product, '10')">1000 г</div>
+                    </div>
+                    <add-to-cart (added)="addToCart($event)" [item]="getItem(product.identifier)" [custom]="false" class="add-to-cart-button"
+                        [type]="'button'" [position]="'top'" [quantity]="1" [buttonText]="'До кошика'">
+                        <button type="button" class="custom-button">
+                            До кошика
+                        </button>
+                    </add-to-cart>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" *ngIf="products && products.length > 0">
+    <pagination-controls (pageChange)="pageChange($event)" previousLabel="" nextLabel="" class="my-pagination"></pagination-controls>
+</div>

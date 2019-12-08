@@ -1,0 +1,13 @@
+agm-map {
+    height: 300px;
+}
+
+#contacts-text {
+    padding-bottom: 20px;
+    font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.social-links span a i {
+    font-size: 35px;
+    padding-right: 25px;
+}

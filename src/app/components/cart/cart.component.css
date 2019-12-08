@@ -1,0 +1,25 @@
+::ng-deep .cart-view {
+    overflow-x: auto;
+}
+
+::ng-deep .cart-list-quantity-content {
+    padding: 0 8px;
+}
+
+::ng-deep .cart-list-value.cart-list-image-value {
+    background-size: contain !important;
+}
+
+::ng-deep .cart-tax-summary, ::ng-deep .cart-shipping-summary {
+    display: none !important;
+}
+
+.purchase-button {
+    text-align: center;
+}
+
+.purchase-button button {
+    background-color: rgb(152, 185, 23);
+    border: 7px solid rgb(152, 185, 23);
+    color: #1F1F1F;
+}

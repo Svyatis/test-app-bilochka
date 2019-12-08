@@ -1,0 +1,21 @@
+import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { Router, ActivatedRoute } from '@angular/router';
+import { DataService } from '../../../../shared/services/data.service';
+import { ProductsBaseComponent } from '../../../../shared/components/products-base/products-base.component';
+import { FormBuilder } from '@angular/forms';
+import { UtilsService } from 'src/app/shared/services/utils.service';
+
+@Component({
+  selector: 'app-fruits',
+  templateUrl: '../../../../shared/components/products-base/products-base.component.html',
+  styleUrls: ['../../../../shared/components/products-base/products-base.component.css']
+})
+export class FruitsComponent extends ProductsBaseComponent implements OnInit {
+
+  constructor(dataService: DataService, toaster: ToastrService, router: Router, route: ActivatedRoute,
+              fb: FormBuilder, us: UtilsService) {
+    super(dataService, toaster, router, route, fb, us);
+    this.basePath = '/fruits';
+  }
+}

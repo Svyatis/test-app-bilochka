@@ -1,0 +1,13 @@
+.login-form {
+    max-width: 300px;
+}
+
+.login-button {
+    text-align: center;
+}
+
+.login-button button {
+    background-color: rgb(152, 185, 23);
+    border: 7px solid rgb(152, 185, 23);
+    color: #1F1F1F;
+}

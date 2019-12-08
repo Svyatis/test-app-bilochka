@@ -1,0 +1,204 @@
+.list-unstyled {
+    margin-bottom: 0;
+}
+
+.transition-smooth,
+.transition-smooth:hover {
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out
+}
+
+/* #region Hover */
+.hover-item {
+    position: relative;
+    overflow: hidden;
+    height: 270px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: flex-start;
+    justify-content: flex-start;
+    -ms-flex-align: flex-start;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.hover-item img {
+    position: relative;
+    top: 0;
+    max-width: 250px;
+    max-height: 110px;
+    -moz-transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+    -o-transform: scale(1.0);
+    -ms-transform: scale(1.0);
+    transform: scale(1.0)
+}
+
+.hover-item-caption {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    z-index: 1;
+}
+
+.hover-item-caption h3 {
+    padding: 0 20px;
+}
+
+.hover-item:hover .hover-item-caption h3,
+.hover-item:hover .smoothie {
+    top: 0px;
+}
+
+.hover-item:hover img {
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2)
+}
+
+.hover-item-caption h3 span,
+.hover-item-caption h2 span {
+    clear: both;
+    display: block;
+    text-transform: none;
+    font-size: 20px;
+    color: #fefefe;
+}
+
+.hover-item-caption a {
+    color: #222;
+}
+/* #endregion */
+
+::ng-deep .add-to-cart .add-to-cart-button {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: rgb(152, 185, 23) !important;
+    color: #1F1F1F;
+    z-index: 2;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+    width: 100%;
+    padding: 2px;
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+::ng-deep .add-to-cart-button:focus {
+    outline: none !important;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.product-weight-row {
+    display: flex;
+    justify-content: space-around;
+}
+
+.product-weight-row-bottom {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 5px;
+}
+
+.product-weight-item {
+    cursor: pointer;
+    width: 50%;
+    background-color: #fff;
+    color: #4B5E0D;
+}
+
+.product-weight-item.active {
+    width: 50%;
+    background-color: rgb(152, 185, 23);
+    color: #1F1F1F;
+}
+
+.product-label {
+    font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #4B5E0D;
+    font-weight: 600;
+}
+
+.product-label-price {
+    font-size: 14px;
+}
+
+.disable-selection {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Opera and Firefox */
+}
+
+pagination-controls.my-pagination {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+::ng-deep .ngx-pagination {
+    padding: 0;
+}
+
+::ng-deep .ngx-pagination .current {
+    background-color: #fff !important;
+    color: #4b5e0d !important;
+    border: 1px solid #4b5e0d;
+    padding: 7px 15px !important;
+}
+
+::ng-deep .ngx-pagination a {
+    outline: none;
+    padding: 8px 15px !important;
+    color: #4b5e0d !important;
+}
+
+::ng-deep pagination-template div {
+    display: flex;
+}
+
+::ng-deep .ngx-pagination .small-screen {
+    display: none;
+}
+
+.image-loading-wheel {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.products-search-form {
+    padding-bottom: 30px;
+}
+
+.products-search-form-button {
+    outline: none !important;
+}
+
+i.fa.fa-times:hover {
+    color: red;
+}
