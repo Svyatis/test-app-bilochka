@@ -1,4 +1,4 @@
-<div class="container" *ngIf="products && products.length > 0">
+<div class="container" *ngIf="showSearch">
     <div class="text-center">
         <form [formGroup]="form" (ngSubmit)="search(form)" class="products-search-form">
             <mat-form-field class="example-full-width">

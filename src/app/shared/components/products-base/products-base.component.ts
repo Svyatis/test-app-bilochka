@@ -16,6 +16,7 @@ export class ProductsBaseComponent implements OnInit {
   products: ProductsCartItem[] = [];
   productsWeightOptions: ProductsCartItem[] = [];
   protected basePath;
+  showSearch = false;
   form: FormGroup = this.fb.group({ searchValue: '' });
   tempCollection;
   config = { currentPage: 1, itemsPerPage: 8 };
@@ -39,6 +40,7 @@ export class ProductsBaseComponent implements OnInit {
           this.products[i] = new ProductsCartItem(item);
           this.setWeightOptions(item);
           this.tempCollection = [...this.products];
+          this.showSearch = true;
           this.utilsService.hide();
         });
       }
