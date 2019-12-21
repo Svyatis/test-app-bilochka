@@ -13,8 +13,7 @@ export class ScrollDirective implements OnInit {
     ngOnInit() {
         this.windowInnerWidth.subscribe(size => {
             if (size > 767) {
-                this.listener = this.renderer.listen('window', 'scroll', (event) => {
-                    console.log('feefw');
+                this.listener = this.renderer.listen('window', 'scroll', () => {
                     if (window.scrollY >= 200 || window.pageYOffset >= 200) {
                         this.renderer.addClass(this.element.nativeElement, 'scrolled');
                     } else {
@@ -25,6 +24,8 @@ export class ScrollDirective implements OnInit {
                 this.listener();
             }
         });
+
+        this.windowInnerWidth.next(window.innerWidth);
     }
 
     @HostListener('window:resize', ['$event'])

@@ -24,8 +24,7 @@ export class CartComponent implements OnInit {
   ngOnInit() {
     if (window.innerWidth < 767) {
       window.scrollTo({
-        top: window.innerHeight - 30,
-        behavior: 'smooth'
+        top: window.innerHeight - 30
       });
     }
 

@@ -4,6 +4,7 @@
 /seoFiles
 /e2e
 /src/environments
+.firebase
 
 # compiled output
 /dist
