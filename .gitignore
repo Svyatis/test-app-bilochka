@@ -3,6 +3,7 @@
 /public
 /seoFiles
 /e2e
+/src/environments
 
 # compiled output
 /dist
