@@ -37,6 +37,14 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    $('#main-navigation').on('hide.bs.collapse', () => {
+      $('body').css('overflow', 'unset');
+    });
+
+    $('#main-navigation').on('show.bs.collapse', () => {
+      $('body').css('overflow', 'hidden');
+    });
+
     this.authService.user.subscribe(user => { this.user = user; });
     $(document).click((e) => {
       ($('#main-navigation') as any).collapse('hide');

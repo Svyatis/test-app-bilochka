@@ -35,7 +35,7 @@ exports.sendMail = functions.https.onRequest((req: any, res: any) => {
 
 exports.sendMailOnDatabaseCreate = functions.database.ref('/orders/{date}/{objId}').onCreate((snapshot: any, context: any) => {
       
-    const dest = 'bilochka.lviv@gmail.com';
+    const dest = 'roksolana_chepil@ukr.net';
     let string = '<ul>';
 
     snapshot.val().items.forEach((item: any) => {

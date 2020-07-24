@@ -21,6 +21,7 @@
             "aot": false,
             "assets": [
               "src/siteIcon.ico",
+              "src/cart-icon.svg",
               "src/assets",
               "src/manifest.webmanifest"
             ],

@@ -202,3 +202,27 @@ pagination-controls.my-pagination {
 i.fa.fa-times:hover {
     color: red;
 }
+
+.gift .product-label-price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 8px;
+}
+
+.gift .product-label-price-weight, .gift .product-weight-row, .gift .product-weight-row-bottom {
+    display: none;
+}
+
+@media screen and (min-width: 375px) {
+    .gift img {
+        max-width: 250px;
+        max-height: 190px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .hover-item.gift {
+        height: 200px;
+    }
+}

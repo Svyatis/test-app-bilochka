@@ -14,14 +14,15 @@
 </div>
 <div class="row">
     <div class="col-6 col-lg-3" *ngFor="let product of products | paginate: config">
-        <div class="hover-item disable-selection">
+        <div class="hover-item disable-selection" [ngClass]="{gift:basePath == '/mixes' || basePath == '/gifts'}">
             <div *ngIf="loading" class="image-loading-wheel"><app-loading-wheel></app-loading-wheel></div>
             <img [hidden]="loading" (load)="onLoad()" [src]="product.photo" class="img-responsive transition-smooth" alt="{{product.label}}"/>
 
             <div class="hover-item-caption transition-smooth">
                 <div class="width-100 vertical-center transition-smooth disable-selection">
                     <div><span class="product-label">{{ product.label }}</span></div>
-                    <div><span class="product-label-price">{{ getItem(product.identifier).cost }} грн/{{getItem(product.identifier).weight}}г</span></div>
+                    <div><span class="product-label-price">{{ getItem(product.identifier).cost }} 
+                        грн<span class="product-label-price-weight">/{{getItem(product.identifier).weight}}г</span></span></div>
                     <div class="product-weight-row">
                         <div class="product-weight-item" [ngClass]="{active:product.identifier.slice(-2) == '01'}" 
                                 (click)="setItemId(product, '01')">100 г</div>

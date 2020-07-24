@@ -15,7 +15,7 @@ export class ProductsBaseComponent implements OnInit {
 
   products: ProductsCartItem[] = [];
   productsWeightOptions: ProductsCartItem[] = [];
-  protected basePath;
+  basePath;
   showSearch = false;
   form: FormGroup = this.fb.group({ searchValue: '' });
   tempCollection;
@@ -57,18 +57,20 @@ export class ProductsBaseComponent implements OnInit {
     weights.forEach((weight, i) => {
       const tempNut: ProductsCartItem = JSON.parse(JSON.stringify(nut));
       tempNut.identifier = nut.identifier.slice(0, -2) + weight;
-      if (weight === '01') {
-        tempNut.label += ' (100 г)';
-        tempNut.weight = 100;
-      } else if (weight === '02') {
-        tempNut.label += ' (200 г)';
-        tempNut.weight = 200;
-      } else if (weight === '05') {
-        tempNut.label += ' (500 г)';
-        tempNut.weight = 500;
-      } else {
-        tempNut.label += ' (1 кг)';
-        tempNut.weight = 1000;
+      if (this.basePath !== '/mixes' && this.basePath !== '/gifts') {
+        if (weight === '01') {
+          tempNut.label += ' (100 г)';
+          tempNut.weight = 100;
+        } else if (weight === '02') {
+          tempNut.label += ' (200 г)';
+          tempNut.weight = 200;
+        } else if (weight === '05') {
+          tempNut.label += ' (500 г)';
+          tempNut.weight = 500;
+        } else {
+          tempNut.label += ' (1 кг)';
+          tempNut.weight = 1000;
+        }
       }
       tempNut.cost *= +weight;
       this.productsWeightOptions.push(new ProductsCartItem(tempNut));

@@ -40,8 +40,17 @@ div#search-wrapper {
     z-index: 4;
 }
 
+.navbar-nav a:hover {
+    color: #a3be3c !important;
+}
+
+.cart-summary-contents:hover {
+    color: #a3be3c !important;
+}
+
 .navbar.scrolled {
     background-color: #fff;
+    box-shadow: 0 -1px 11px #000;
 }
 
 .navbar-header .logo-light {
@@ -144,7 +153,8 @@ div#search-wrapper {
 .navbar-default .nav li a {
     font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 400;
+    text-shadow: 0px 0px;
     font-size: 13px;
     color: #fff;
     padding-left: 20px;
@@ -152,7 +162,7 @@ div#search-wrapper {
 }
 
 ::ng-deep .cart-summary-contents {
-    font-size: 10px !important;
+    font-size: 11px !important;
 }
 
 header#headerwrap {
@@ -293,6 +303,10 @@ footer .row {
     ::ng-deep .scrolled .cart-summary {
         color: #000;
     }
+	
+	::ng-deep .scrolled .cart-summary:hover {
+        color: #a3be3c !important;
+    }
 
     header .intro-text .intro-heading {
         margin-bottom: 20px;
@@ -353,6 +367,7 @@ footer .row {
 
     .navbar, .navbar.scrolled {
         background-color: #000;
+		box-shadow: 0px -1px 11px #000;
     }
     
     .navbar-header {
@@ -374,6 +389,7 @@ footer .row {
 
     #main-navigation ul li {
         margin: 0 auto;
+		height: 50px;
     }
 
     #main-navigation ul li a {
@@ -405,7 +421,7 @@ footer .row {
     }
 
     ::ng-deep .cart-summary .cart-summary-contents {
-        padding-left: 0 !important;
+        color: #a3be3c !important;
     }
 
     ::ng-deep .cart-summary-items {
