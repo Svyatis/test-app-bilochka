@@ -63,7 +63,6 @@ import { ImagePreviewDialogComponent } from './shared/components/image-preview-d
     SharedModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production, registrationStrategy: 'registerImmediately' })
   ],
-  entryComponents: [ImagePreviewDialogComponent],
   providers: [
     DatePipe
   ],
