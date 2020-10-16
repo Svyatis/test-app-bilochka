@@ -13,8 +13,8 @@ const routes: Routes = [
   { path: 'about-us', component: AboutUsComponent },
   { path: 'contacts', component: ContactsComponent },
   { path: 'cart', component: CartComponent },
-  { path: 'products', loadChildren: './components/products/products.module#ProductsModule' },
-  { path: 'admin', loadChildren: './components/admin/admin.module#AdminModule', canActivate: [AuthGuard] },
+  { path: 'products', loadChildren: () => import('./components/products/products.module').then(m => m.ProductsModule) },
+  { path: 'admin', loadChildren: () => import('./components/admin/admin.module').then(m => m.AdminModule), canActivate: [AuthGuard] },
   { path: '**', redirectTo: '/' }
 ];
 
