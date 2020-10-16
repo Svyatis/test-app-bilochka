@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { DataService } from '../../services/data.service';
 import { ProductsCartItem } from 'src/app/shared/entities/product-cart-item';
 import { ToastrService } from 'ngx-toastr';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { UtilsService } from '../../services/utils.service';
+import { ImagePreviewDialogComponent } from '../image-preview-dialog/image-preview-dialog.component';
 
 @Component({
   selector: 'app-products-base',
@@ -25,7 +27,7 @@ export class ProductsBaseComponent implements OnInit {
       this.loading = false;
   }
 
-  constructor(private dataService: DataService, private toaster: ToastrService, public router: Router,
+  constructor(private dataService: DataService, private toaster: ToastrService, public router: Router, public dialog: MatDialog,
               public route: ActivatedRoute, private fb: FormBuilder, private utilsService: UtilsService) { }
 
   ngOnInit() {
@@ -117,6 +119,13 @@ export class ProductsBaseComponent implements OnInit {
         top: window.innerHeight - 30
       });
     }
+  }
+
+  openDialog(name: string, image: string): void {
+    const dialogRef = this.dialog.open(ImagePreviewDialogComponent, {
+      width: '250px',
+      data: {name, image}
+    });
   }
 
 }

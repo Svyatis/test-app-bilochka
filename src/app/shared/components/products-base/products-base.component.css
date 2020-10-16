@@ -168,10 +168,21 @@ pagination-controls.my-pagination {
     padding: 7px 15px !important;
 }
 
+::ng-deep .ngx-pagination .pagination-previous.disabled::before, ::ng-deep .ngx-pagination .pagination-next.disabled::after {
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
 ::ng-deep .ngx-pagination a {
     outline: none;
     padding: 8px 15px !important;
     color: #4b5e0d !important;
+}
+
+::ng-deep .pagination-previous a, ::ng-deep .pagination-next a {
+    padding: 0px !important;
+    display: inline-flex !important;
+    align-items: center !important;
 }
 
 ::ng-deep pagination-template div {
@@ -225,4 +236,19 @@ i.fa.fa-times:hover {
     .hover-item.gift {
         height: 200px;
     }
+}
+
+::ng-deep .cdk-overlay-pane {
+    width: auto !important;
+}
+
+::ng-deep .cdk-overlay-pane img {
+    max-width: 100% !important;
+    max-height: 65vh !important;
+}
+
+::ng-deep .product-dialog-picture-name {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
 }

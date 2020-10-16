@@ -23,11 +23,13 @@ import { HomeComponent } from './components/home/home.component';
 import { AdminBaseComponent } from './shared/components/admin-base/admin-base.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProductsCartItem } from './shared/entities/product-cart-item';
+import { ImagePreviewDialogComponent } from './shared/components/image-preview-dialog/image-preview-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CartComponent,
+    ImagePreviewDialogComponent,
     AboutUsComponent,
     ContactsComponent,
     HomeComponent,
@@ -61,6 +63,7 @@ import { ProductsCartItem } from './shared/entities/product-cart-item';
     SharedModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production, registrationStrategy: 'registerImmediately' })
   ],
+  entryComponents: [ImagePreviewDialogComponent],
   providers: [
     DatePipe
   ],

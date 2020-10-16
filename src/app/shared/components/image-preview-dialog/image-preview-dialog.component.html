@@ -1,0 +1,10 @@
+<span mat-dialog-title class="product-dialog-picture-name">
+    <span>{{data.name}}</span>
+    <span class="close-button" (click)="closeWindow()">
+        <i class="fa fa-close"></i>
+    </span>
+</span>
+
+<div mat-dialog-content>
+  <img [src]="data.image" alt="Bilochka Nuts and Fruits" />
+</div>

@@ -55,25 +55,25 @@
                 </button>
             </div>
 
-            <div class="collapse navbar-collapse" id="main-navigation" appScroll>
+            <div class="collapse navbar-collapse" id="main-navigation">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a [routerLink]="['/']" aria-label="Головна сторінка Білочка">Головна</a>
+                        <a [routerLink]="['/']" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}" aria-label="Головна сторінка Білочка">Головна</a>
                     </li>
                     <li>
-                        <a [routerLink]="['/products/nuts']" aria-label="Продукція Білочка">Продукція</a>
+                        <a [routerLink]="['/products']" routerLinkActive="is-active" aria-label="Продукція Білочка">Продукція</a>
                     </li>
                     <li>
-                        <a [routerLink]="['/about-us']" aria-label="Про нас Білочка">Про нас</a>
+                        <a [routerLink]="['/about-us']" routerLinkActive="is-active" aria-label="Про нас Білочка">Про нас</a>
                     </li>
                     <li>
-                        <a [routerLink]="['/contacts']" aria-label="Контакти Білочка">Контакти</a>
+                        <a [routerLink]="['/contacts']" routerLinkActive="is-active" aria-label="Контакти Білочка">Контакти</a>
                     </li>
                     <li *ngIf="user" class="cursor-pointer">
                         <a (click)="logOut()" aria-label="Вийти">Вийти</a>
                     </li>
                     <li id="cart-summary-list-item">
-                        <a [routerLink]="['/cart']" aria-label="Кошик">
+                        <a [routerLink]="['/cart']" routerLinkActive="is-active" aria-label="Кошик">
                             <cart-summary [noItemsText]="'# товарів'" [oneItemText]="'# товар'"
                                 [manyItemsText]="manyItemsText" [icon]="'/cart-icon.svg'">
                             </cart-summary>
@@ -85,7 +85,7 @@
     </nav>
 
     <!-- Header -->
-    <header id="headerwrap" class="dark-wrapper disable-selection" appScroll>
+    <header id="headerwrap" class="dark-wrapper disable-selection">
         <div class="header-overlay"></div>
         <div class="container vertical-center">
             <div class="intro-text vertical-center text-left">
@@ -159,7 +159,7 @@
                 <div class="row">
                     <div class="col-md-6 text-left">
                         <div class="vertical-center">
-                            <span class="copyright">Copyright {{date}}. Designed by SV.</span>
+                            <span class="copyright">Copyright {{date}}. Designed by <a [routerLink]="['/admin']" class="no-link" aria-label="panel">SV</a>.</span>
                         </div>
                     </div>
                 </div>

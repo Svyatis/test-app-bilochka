@@ -5,6 +5,7 @@ import { DataService } from '../../../../shared/services/data.service';
 import { ProductsBaseComponent } from '../../../../shared/components/products-base/products-base.component';
 import { FormBuilder } from '@angular/forms';
 import { UtilsService } from 'src/app/shared/services/utils.service';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-nuts',
@@ -13,9 +14,9 @@ import { UtilsService } from 'src/app/shared/services/utils.service';
 })
 export class NutsComponent extends ProductsBaseComponent implements OnInit {
 
-  constructor(dataService: DataService, toaster: ToastrService, router: Router, route: ActivatedRoute,
+  constructor(dataService: DataService, toaster: ToastrService, router: Router, public dialog: MatDialog, route: ActivatedRoute,
               fb: FormBuilder, us: UtilsService) {
-    super(dataService, toaster, router, route, fb, us);
+    super(dataService, toaster, router, dialog, route, fb, us);
     this.basePath = '/nuts';
   }
 }

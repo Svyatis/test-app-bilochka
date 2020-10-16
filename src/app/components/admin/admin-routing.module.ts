@@ -6,12 +6,14 @@ import { AdminNutsComponent } from './nuts/nuts.component';
 import { AdminFruitsComponent } from './fruits/fruits.component';
 import { AdminGiftsComponent } from './gifts/gifts.component';
 import { AdminMixesComponent } from './mixes/mixes.component';
+import { AdminOrdersComponent } from './orders/orders.component';
 
 const childRoutes: Routes = [
   { path: 'nuts', component: AdminNutsComponent },
   { path: 'fruits', component: AdminFruitsComponent },
   { path: 'gifts', component: AdminGiftsComponent },
   { path: 'mixes', component: AdminMixesComponent },
+  { path: 'orders', component: AdminOrdersComponent },
   { path: '', redirectTo: 'nuts', pathMatch: 'full' },
   { path: '**', redirectTo: 'nuts' }
 ];

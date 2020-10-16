@@ -18,7 +18,7 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "src/siteIcon.ico",
               "src/cart-icon.svg",
@@ -80,7 +80,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "bilochka:build"
+            "browserTarget": "bilochka:build",
+            "aot": true
           },
           "configurations": {
             "production": {

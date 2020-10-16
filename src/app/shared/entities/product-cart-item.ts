@@ -48,3 +48,22 @@ export class ProductsCartItem extends CartItem {
   }
 
 }
+
+export class OrdersItem {
+  public identifier: string;
+  public email: string;
+  public name: string;
+  public phone: string;
+  public totalCost: number;
+  public date: string;
+
+  constructor(itemData: any = {}) {
+    const { identifier, label, cost, amount, description, country, photo, weight } = itemData;
+    this.identifier = identifier || 0;
+    this.email = label || '';
+    this.name = cost || '';
+    this.phone = amount || '';
+    this.totalCost = description || 0;
+    this.date = country || '';
+  }
+}

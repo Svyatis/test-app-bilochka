@@ -8,6 +8,12 @@
                                     supported by Chrome, Opera and Firefox */
 }
 
+a.no-link {
+    color: white;
+    text-decoration: none;
+    cursor: not-allowed;
+}
+
 ::ng-deep .toast-info {
     background-color: rgb(152, 185, 23);
 }
@@ -23,6 +29,10 @@
     text-decoration: none;
 }
 
+#main-navigation ul li:last-of-type a {
+    padding-right: 0 !important;
+}
+
 div#search-wrapper {
     position: absolute;
     visibility: hidden;
@@ -30,6 +40,7 @@ div#search-wrapper {
 
 .navbar {
     position: fixed;
+    top: 0 !important;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -38,6 +49,54 @@ div#search-wrapper {
     background: transparent;
     width: 100% !important;
     z-index: 4;
+}
+
+.navbar-nav a {
+    font-size: 36px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+}
+
+.navbar-nav a.is-active {
+    color: #a3be3c !important;
+}
+
+.navbar-nav a:before, .navbar-nav a:after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    width: 0px;
+    height: 1px;
+    margin: 5px 0 0;
+    transition: all 0.1s ease-in-out;
+    transition-duration: 0.35s;
+    opacity: 0;
+    background-color: #a3be3c !important;
+}
+
+.navbar-nav a:before {
+    left: 50%;
+}
+
+.navbar-nav a:after {
+    right: 50%;
+}
+
+.scrolled .navbar-nav a:before, .scrolled .navbar-nav a:after {
+   background-color: #a3be3c !important;
+}
+
+.navbar-nav li:not(:last-child) a:hover::before, .navbar-nav li:not(:last-child) a:hover::after {
+    opacity: 1;
+    width: 41%;
+}
+
+.navbar-nav li:not(:last-child) a.is-active::before, .navbar-nav li:not(:last-child) a.is-active::after {
+    opacity: 1;
+    width: 41%;
 }
 
 .navbar-nav a:hover {
@@ -152,12 +211,11 @@ div#search-wrapper {
 
 .navbar-default .nav li a {
     font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-transform: uppercase;
-    font-weight: 400;
-    text-shadow: 0px 0px;
-    font-size: 13px;
+    text-transform: lowercase;
+    font-weight: 600;
+    font-size: 14px;
     color: #fff;
-    padding-left: 20px;
+    padding: 0 10px;
     letter-spacing: 1px;
 }
 
@@ -290,7 +348,7 @@ footer .row {
 
 @media (min-width: 767px) {
     .scrolled #main-navigation ul li a {
-        color: #000;
+        color: #333;
     }
     
     .scrolled .navbar-header .logo-light {
@@ -301,7 +359,11 @@ footer .row {
     }
 
     ::ng-deep .scrolled .cart-summary {
-        color: #000;
+        color: #333;
+    }
+
+    ::ng-deep .scrolled .is-active .cart-summary {
+        color: #a3be3c !important;
     }
 	
 	::ng-deep .scrolled .cart-summary:hover {
@@ -409,7 +471,7 @@ footer .row {
     }
 
     .overscrolled .header-overlay {
-        background-color: #000;
+        background-color: #333;
     }
 
     cart-summary {

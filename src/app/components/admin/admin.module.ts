@@ -7,6 +7,7 @@ import { AdminNutsComponent } from './nuts/nuts.component';
 import { AdminFruitsComponent } from './fruits/fruits.component';
 import { AdminGiftsComponent } from './gifts/gifts.component';
 import { AdminMixesComponent } from './mixes/mixes.component';
+import { AdminOrdersComponent } from './orders/orders.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AdminMixesComponent } from './mixes/mixes.component';
     AdminNutsComponent,
     AdminFruitsComponent,
     AdminGiftsComponent,
-    AdminMixesComponent
+    AdminMixesComponent,
+    AdminOrdersComponent
   ],
   imports: [
     SharedModule,
