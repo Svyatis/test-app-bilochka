@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase } from '@angular/fire/database';
 import { FormBuilder } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
