@@ -1,8 +1,8 @@
 <div class="container">
-    <div id="contacts-text">
-        Ви можете зв'язатись з нами за електронною адресою: bilochka.lviv@gmail.com. <br />
-        Та за телефоном: 063 84 80 320. <br />
-        А також всі новини в соціальних мережах:
+    <div id="contacts-text" class="left-slide-in">
+        Ви можете зв'язатись з нами за електронною адресою: <b>bilochka.lviv@gmail.com</b> <br />
+        Та за телефоном: <b>063 84 80 320</b> <br />
+        А також всі новини в соціальних мережах: <br />
         <div class="list-inline social-links">
             <span>
                 <a href="https://www.instagram.com/bilochka_nuts_fruits" rel="noreferrer" target="_blank" aria-label="Twitter">
@@ -18,5 +18,8 @@
             </span>
         </div>
     </div>
-    <agm-map [latitude]="lat" [longitude]="lng"></agm-map>
+    <hr />
+    <div id="contacts-map" class="right-slide-in">
+        <agm-map [latitude]="lat" [longitude]="lng"></agm-map>
+    </div>
 </div>

@@ -14,6 +14,11 @@
     display: none !important;
 }
 
+::ng-deep .cart-view-empty {
+    background: linear-gradient(to left, #fff, rgb(197,219,115, 0.3), #fff) !important;
+    font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
 .purchase-button {
     text-align: center;
 }

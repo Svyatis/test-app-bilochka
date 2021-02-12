@@ -1,3 +1,7 @@
+.container {
+    overflow: hidden;
+}
+
 .dashboard-section-image {
     display: flex;
     justify-content: center;

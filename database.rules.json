@@ -1,6 +1,6 @@
 {
   "rules": {
     ".read": "true",
-    ".write": "true"
+    ".write": "auth.token.email.endsWith('@i.ua') || auth.token.email.endsWith('@ukr.net')"
   }
 }

@@ -1,13 +1,43 @@
+.container {
+    overflow: hidden;
+}
+
 agm-map {
     height: 300px;
 }
 
 #contacts-text {
-    padding-bottom: 20px;
+    text-align: center;
+    line-height: 30px;
+    margin-top: -30px;
+    padding: 30px 0 10px 0;
     font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --background: linear-gradient(to left, #fff, rgb(197,219,115, 0.3), #fff);
+}
+
+#contacts-map {
+    display: flex;
+    justify-content: center;
+    --background: linear-gradient(to left, #fff, rgb(197,219,115, 0.3), #fff);
+    padding: 20px 0;
+}
+
+agm-map {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+}
+
+a {
+    color: #a3bf3c;
+}
+
+a:hover {
+    color: #586d0e;
 }
 
 .social-links span a i {
     font-size: 35px;
+    padding-top: 10px;
     padding-right: 25px;
 }
