@@ -60,6 +60,8 @@ exports.sendMailOnDatabaseCreate = functions.database.ref('/orders/{date}/{objId
 
     return transporter.sendMail(mailOptions, (erro: any, info: any) => {
         if(erro){
+            console.log('some issue with mails');
+            console.log(erro);
             return;
         }
         console.log('Відправлено!');
